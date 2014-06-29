@@ -191,8 +191,6 @@
 						<string>Grid.ccb</string>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -336,7 +334,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>44</real>
+													<real>46</real>
 													<real>23</real>
 													<integer>0</integer>
 													<integer>0</integer>
@@ -374,7 +372,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Sample Text</string>
+													<string>0</string>
 													<false/>
 												</array>
 											</dict>
@@ -581,7 +579,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Sample Text</string>
+													<string>Generation</string>
 													<false/>
 												</array>
 											</dict>
@@ -750,7 +748,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>57</real>
+													<real>47</real>
 													<real>41</real>
 													<integer>0</integer>
 													<integer>0</integer>
@@ -788,7 +786,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Sample Text</string>
+													<string>0</string>
 													<false/>
 												</array>
 											</dict>
@@ -957,7 +955,7 @@
 												<string>Position</string>
 												<key>value</key>
 												<array>
-													<real>45</real>
+													<real>46</real>
 													<real>70</real>
 													<integer>0</integer>
 													<integer>0</integer>
@@ -995,7 +993,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Sample Text</string>
+													<string>Population</string>
 													<false/>
 												</array>
 											</dict>
@@ -1214,6 +1212,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>

@@ -29,6 +29,51 @@ static const int GRID_COLUMNS = 10;
     self.userInteractionEnabled = YES;
 }
 
+- (void)evolveStep
+{
+    //update each Creature's neighbor count
+    [self countNeighbors];
+    
+    //update each Creature's state
+    [self updateCreatures];
+    
+    //update the generation so the label's text will display the correct generation
+    _generation++;
+}
+
+- (void)updateCreatures
+{
+    int numAlive = 0;
+    
+    for (int i = 0; i < [_gridArray count]; i++)
+    {
+        for (int j = 0; j < [_gridArray[i] count]; j++)
+        {
+            Creature *currentCreature = _gridArray[i][j];
+            if (currentCreature.livingNeighbors == 3) {
+                currentCreature.isAlive = TRUE;
+                numAlive ++;
+            }
+            
+            if (currentCreature.livingNeighbors <= 1 || currentCreature.livingNeighbors >= 4) {
+                currentCreature.isAlive = FALSE;
+            }
+        }
+    }
+    
+    _totalAlive = numAlive;
+}
+
+- (BOOL)isIndexValidForX:(int)x andY:(int)y
+{
+    BOOL isIndexValid = YES;
+    if(x < 0 || y < 0 || x >= GRID_ROWS || y >= GRID_COLUMNS)
+    {
+        isIndexValid = NO;
+    }
+    return isIndexValid;
+}
+
 - (void)setupGrid
 {
     // divide the grid's size by the number of columns/rows to figure out the right width and height of each cell
@@ -77,10 +122,8 @@ static const int GRID_COLUMNS = 10;
 
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
 {
-    
     int column;
     int row;
-    
     
     row = touchPosition.y / _cellHeight;
     column = touchPosition.x / _cellWidth;
